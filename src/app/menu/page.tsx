@@ -236,7 +236,6 @@ const categories = [
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState<string>("drinks");
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
 
   // Grouping for drinks
   const drinkGroups = [
@@ -365,9 +364,7 @@ export default function MenuPage() {
                         className="relative group"
                       >
                         <motion.div
-                          className={`relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-300${
-                            expandedItems.has(item.id) ? ' ring-4 ring-[var(--lion)] ring-opacity-50' : ''
-                          }`}
+                          className="relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-300"
                         >
                           {/* Card Background */}
                           <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-90`} />
@@ -495,9 +492,7 @@ export default function MenuPage() {
                 className="relative group"
               >
                 <motion.div
-                  className={`relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-300${
-                    expandedItems.has(item.id) ? ' ring-4 ring-[var(--lion)] ring-opacity-50' : ''
-                  }`}
+                  className="relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-300"
                 >
                   {/* Card Background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-90`} />
