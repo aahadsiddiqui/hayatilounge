@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiChevronDown, FiChevronUp, FiStar, FiClock, FiThermometer } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { FiStar, FiThermometer } from "react-icons/fi";
 
 interface MenuItem {
   id: string;
@@ -237,8 +237,6 @@ const categories = [
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState<string>("drinks");
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [selectedFilters, setSelectedFilters] = useState<Set<string>>(new Set());
 
   // Grouping for drinks
   const drinkGroups = [
@@ -260,33 +258,7 @@ export default function MenuPage() {
     },
   ];
 
-  const toggleExpanded = (itemId: string) => {
-    const newExpanded = new Set(expandedItems);
-    if (newExpanded.has(itemId)) {
-      newExpanded.delete(itemId);
-    } else {
-      newExpanded.add(itemId);
-    }
-    setExpandedItems(newExpanded);
-  };
-
-  const filteredItems = menuItems.filter(item => {
-    if (selectedFilters.size === 0) return item.category === activeCategory;
-    return item.category === activeCategory && 
-           (selectedFilters.has("popular") ? item.isPopular : true) &&
-           (selectedFilters.has("vegetarian") ? item.isVegetarian : true) &&
-           (selectedFilters.has("spicy") ? item.isSpicy : true);
-  });
-
-  const toggleFilter = (filter: string) => {
-    const newFilters = new Set(selectedFilters);
-    if (newFilters.has(filter)) {
-      newFilters.delete(filter);
-    } else {
-      newFilters.add(filter);
-    }
-    setSelectedFilters(newFilters);
-  };
+  const filteredItems = menuItems.filter(item => item.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-[var(--platinum)] relative overflow-hidden">
@@ -406,8 +378,6 @@ export default function MenuPage() {
                               <span className="text-3xl md:text-4xl">{item.emoji}</span>
                               <motion.span 
                                 className="text-xl font-bold"
-                                animate={{ scale: hoveredItem === item.id ? 1.1 : 1 }}
-                                transition={{ duration: 0.2 }}
                               >
                                 {item.price}
                               </motion.span>
@@ -476,26 +446,6 @@ export default function MenuPage() {
                               </div>
                             )}
 
-                            {/* Hover Overlay */}
-                            <motion.div
-                              className="absolute inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center"
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: hoveredItem === item.id ? 1 : 0 }}
-                              transition={{ duration: 0.3 }}
-                            >
-                              <motion.div
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                animate={{ 
-                                  scale: hoveredItem === item.id ? 1 : 0.8,
-                                  opacity: hoveredItem === item.id ? 1 : 0
-                                }}
-                                transition={{ duration: 0.3 }}
-                                className="text-center"
-                              >
-                                <div className="text-4xl mb-2">{item.emoji}</div>
-                              </motion.div>
-                            </motion.div>
-
                             {/* Popular Badge (moved to bottom right) */}
                             {item.isPopular && (
                               <motion.div
@@ -558,8 +508,6 @@ export default function MenuPage() {
                       <span className="text-3xl md:text-4xl">{item.emoji}</span>
                       <motion.span 
                         className="text-xl font-bold"
-                        animate={{ scale: hoveredItem === item.id ? 1.1 : 1 }}
-                        transition={{ duration: 0.2 }}
                       >
                         {item.price}
                       </motion.span>
@@ -627,26 +575,6 @@ export default function MenuPage() {
                         )}
                       </div>
                     )}
-
-                    {/* Hover Overlay */}
-                    <motion.div
-                      className="absolute inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hoveredItem === item.id ? 1 : 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ 
-                          scale: hoveredItem === item.id ? 1 : 0.8,
-                          opacity: hoveredItem === item.id ? 1 : 0
-                        }}
-                        transition={{ duration: 0.3 }}
-                        className="text-center"
-                      >
-                        <div className="text-4xl mb-2">{item.emoji}</div>
-                      </motion.div>
-                    </motion.div>
 
                     {/* Popular Badge (moved to bottom right) */}
                     {item.isPopular && (
