@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@source "../../src/**/*.{ts,tsx,js,jsx}";
+
+/* ─── Design Tokens ─── */
+:root {
+  --bg:           #0f0d0b;
+  --bg-2:         #161210;
+  --bg-card:      #1e1915;
+  --bg-card-h:    #251f18;
+
+  --gold:         #c9a96e;
+  --gold-light:   #dfc291;
+  --gold-dim:     rgba(201, 169, 110, 0.5);
+
+  --cream:        #f0e8dc;
+  --cream-muted:  #8b7b69;
+  --terracotta:   #a05a30;
+
+  --border:       rgba(201, 169, 110, 0.10);
+  --border-hover: rgba(201, 169, 110, 0.28);
+
+  --background:    #0f0d0b;
+  --foreground:    #f0e8dc;
+  --prussian-blue: #1e3a5f;
+  --lion:          #c9a96e;
+  --platinum:      #e0e7e2;
+  --kobicha:       #653c21;
+  --rust:          #a05a30;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground:  var(--cream);
+  --font-sans:         var(--font-geist-sans);
+  --font-mono:         var(--font-geist-mono);
+}
+
+/* ─── Base ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-geist-sans), ui-sans-serif, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar        { width: 3px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--gold-dim); border-radius: 2px; }
+
+/* ─── Hide horizontal scrollbar ─── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── Ambient orbs ─── */
+@keyframes ambient-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(35px, -28px) scale(1.06); }
+  66%       { transform: translate(-22px, 22px) scale(0.96); }
+}
+@keyframes ambient-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-45px, 30px) scale(1.08); }
+  66%       { transform: translate(28px, -35px) scale(0.94); }
+}
+@keyframes ambient-drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(18px, 45px) scale(1.04); }
+  66%       { transform: translate(-32px, -15px) scale(0.98); }
+}
+
+.orb-a { animation: ambient-drift-a 22s ease-in-out infinite; }
+.orb-b { animation: ambient-drift-b 30s ease-in-out infinite; }
+.orb-c { animation: ambient-drift-c 26s ease-in-out infinite 3s; }
+
+/* ─── Scroll indicator ─── */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(9px); }
+}
+.animate-bob { animation: bob 2s ease-in-out infinite; }
