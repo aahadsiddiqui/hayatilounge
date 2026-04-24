@@ -6,25 +6,29 @@ import { SiInstagram, SiGoogle } from "react-icons/si";
 
 /* ─── Data ─── */
 const featuredDishes = [
-  { name: "Beef Short Ribs",         price: "$30",   image: "/ribs.png",        tag: "Mains"    },
-  { name: "Salmon",                  price: "$25",   image: "/salmon.png",      tag: "Popular"  },
-  { name: "Chicken Shawarma Wrap",   price: "$13.99",image: "/shawarma.png",    tag: "Wraps"    },
-  { name: "Garlic Shrimp",           price: "$9.99", image: "/garlicshrimp.png",tag: "Apps"     },
-  { name: "Beef Tacos",              price: "$15.99",image: "/tacos.png",       tag: "Apps"     },
-  { name: "Crème Brûlée",            price: "$11.99",image: "/brulee.png",      tag: "Desserts" },
+  { name: "Loaded Fries",      price: "$16.99", image: "/loaded-fries.png",    tag: "Apps"      },
+  { name: "Wings w/ Fries",    price: "$17.99", image: "/wingsfries.png",      tag: "Apps"      },
+  { name: "Chicken Burger",    price: "$15.99", image: "/chicken-burger.png", tag: "Handhelds" },
+  { name: "Bruschetta",        price: "$11.99", image: "/bruschetta.png",      tag: "Apps"      },
+  { name: "Beef Tacos",        price: "$14.99", image: "/beeftaco.png",        tag: "Apps"      },
+  { name: "Cheesecake",        price: "$11.99", image: "/cheesecake.png",      tag: "Desserts"  },
 ];
 
 const menuCategories = [
-  { name: "Food",     sub: "Apps, wraps & mains",     image: "/ribs.png",       gradient: false },
-  { name: "Drinks",   sub: "5+ artisan beverages",    image: null,              gradient: true  },
-  { name: "Desserts", sub: "Sweet, indulgent endings", image: "/cheesecake.png", gradient: false },
+  { name: "Food",     sub: "Apps, salads & handhelds", image: "/loaded-fries.png", gradient: false },
+  { name: "Drinks",   sub: "Soft drinks, tea & more",  image: null,              gradient: true  },
+  { name: "Desserts", sub: "Sweet endings",           image: "/cheesecake.png", gradient: false },
 ];
 
 const stats = [
-  { value: "5+",   label: "Artisan Drinks" },
-  { value: "10",   label: "Kitchen Dishes" },
-  { value: "Ajax", label: "Ontario"        },
+  { value: "10+",  label: "Drinks"       },
+  { value: "15",   label: "Food picks"  },
+  { value: "Ajax", label: "Ontario"     },
 ];
+
+const venueAddress = "190 Station St Unit 1, Ajax, ON L1S 2G3";
+const googleMapsVenueUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueAddress)}`;
+const googleMapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(venueAddress)}&z=17&ie=UTF8&iwloc=&output=embed`;
 
 /* ─── Variants ─── */
 const fadeUp = {
@@ -153,7 +157,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 1.05 }}
             className="text-[var(--cream)]/70 text-[14px] sm:text-[16px] max-w-[280px] sm:max-w-sm leading-relaxed mb-10 tracking-wide"
           >
-            Elevated food · artisan drinks · decadent desserts
+            Elevated food · drinks & tea · sweet endings
           </motion.p>
 
           {/* CTAs */}
@@ -363,7 +367,7 @@ export default function Home() {
               Hayati Lounge is more than a place to eat and drink — it&apos;s a sanctuary for those who appreciate the finer details. Carefully crafted dishes, handcrafted drinks, and a space designed for genuine connection.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["Elevated Kitchen", "Artisan Drinks", "Sweet Desserts", "Ajax, Ontario"].map((t) => (
+              {["Elevated Kitchen", "Drinks & Tea", "Sweet Desserts", "Ajax, Ontario"].map((t) => (
                 <span key={t} className="px-3.5 py-1.5 text-[10px] tracking-wide text-[var(--gold)] border border-[var(--gold)]/20 rounded-full uppercase">
                   {t}
                 </span>
@@ -402,11 +406,11 @@ export default function Home() {
           >
             <motion.a
               whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-              href="https://maps.app.goo.gl/59yp4oFmusYqcsj26"
+              href={googleMapsVenueUrl}
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-6 py-3.5 border border-[var(--gold)]/28 text-[var(--gold)] rounded-full hover:bg-[var(--gold)]/8 hover:border-[var(--gold)]/55 transition-all duration-300 text-sm"
             >
-              <SiGoogle className="text-base" /> Google Reviews
+              <SiGoogle className="text-base" /> Google Maps
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
@@ -425,7 +429,7 @@ export default function Home() {
           >
             <iframe
               title="Hayati Lounge Location"
-              src="https://maps.google.com/maps?q=Hayati%20Lounge&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src={googleMapsEmbedUrl}
               width="100%"
               height="300"
               loading="lazy"
@@ -448,9 +452,9 @@ export default function Home() {
               className="text-[var(--cream-muted)] hover:text-[var(--gold)] transition-colors duration-300 text-sm flex items-center gap-1.5">
               <SiInstagram /> Instagram
             </a>
-            <a href="https://maps.app.goo.gl/59yp4oFmusYqcsj26" target="_blank" rel="noopener noreferrer"
+            <a href={googleMapsVenueUrl} target="_blank" rel="noopener noreferrer"
               className="text-[var(--cream-muted)] hover:text-[var(--gold)] transition-colors duration-300 text-sm flex items-center gap-1.5">
-              <SiGoogle /> Reviews
+              <SiGoogle /> Maps
             </a>
           </div>
           <p className="text-[var(--cream-muted)] text-xs">

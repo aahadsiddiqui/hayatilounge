@@ -22,11 +22,16 @@ interface MenuItem {
 /* ─── Menu Data ─── */
 const menuItems: MenuItem[] = [
   // ── Soft Drinks ──
-  { id: "coca-cola",  name: "Coke",  price: "$2.99",  description: "Classic Coke served ice cold.",             ingredients: ["Coke"],                        allergens: [], category: "drinks", subcategory: "Soft Drinks" },
-  { id: "coke-zero", name: "Coke Zero",  price: "$2.99",  description: "Coke Zero Sugar, served ice cold.",               ingredients: ["Coke Zero"],                        allergens: [], category: "drinks", subcategory: "Soft Drinks" },
-  { id: "gingerale", name: "Ginger Ale", price: "$2.99",  description: "Refreshing ginger ale, perfectly chilled.",       ingredients: ["Ginger Ale"],                       allergens: [], category: "drinks", subcategory: "Soft Drinks" },
-  { id: "sprite",    name: "Sprite",     price: "$2.99",  description: "Lemon-lime soda served ice cold.",                 ingredients: ["Sprite"],                           allergens: [], category: "drinks", subcategory: "Soft Drinks" },
-  { id: "fuze",      name: "Fuze",       price: "$2.99",  description: "Fuze iced tea, chilled and refreshing.",           ingredients: ["Fuze Iced Tea"],                    allergens: [], category: "drinks", subcategory: "Soft Drinks" },
+  {
+    id: "soft-drinks",
+    name: "Soft Drinks",
+    price: "$2.99",
+    description: "Coke, Coke Zero, Fuze, Ginger Ale, and Sprite — served chilled.",
+    ingredients: [],
+    allergens: [],
+    category: "drinks",
+    subcategory: "Soft Drinks",
+  },
   // ── Energy ──
   { id: "red-bull",  name: "Red Bull",   price: "$5.50",  description: "Red Bull energy drink, served ice cold.",          ingredients: ["Red Bull"],                         allergens: [], category: "drinks", subcategory: "Energy Drink" },
   { id: "barbican",  name: "Barbican",  price: "$5.50",  description: "Malt beverage, served chilled.",                 ingredients: ["Barbican"],                        allergens: ["Gluten"], category: "drinks", subcategory: "Bottled" },
@@ -72,7 +77,6 @@ const menuItems: MenuItem[] = [
     category: "food",
     subcategory: "Apps",
     image: "/truffle.png",
-    isPopular: true,
   },
   {
     id: "poutine",
@@ -97,40 +101,6 @@ const menuItems: MenuItem[] = [
     image: "/loaded-fries.png",
   },
   {
-    id: "bruschetta",
-    name: "Bruschetta",
-    price: "$11.99",
-    description: "",
-    ingredients: ["Baguette", "Tomato", "Basil", "Garlic", "Olive Oil"],
-    allergens: ["Gluten"],
-    category: "food",
-    subcategory: "Apps",
-    image: "/bruschetta.png",
-  },
-  {
-    id: "shish-kabob-fries",
-    name: "Shish Kabob w/ Fries",
-    price: "$15.99",
-    description: "",
-    ingredients: ["Seasoned Meat", "House Spice", "Fries"],
-    allergens: [],
-    category: "food",
-    subcategory: "Apps",
-    image: "/shishkebab.png",
-  },
-  {
-    id: "garlic-shrimp-app",
-    name: "Garlic Shrimp",
-    price: "$9.99",
-    description: "",
-    ingredients: ["Tiger Shrimp", "Garlic Butter", "Lemon", "Parsley"],
-    allergens: ["Shellfish", "Dairy"],
-    category: "food",
-    subcategory: "Apps",
-    image: "/garlicshrimp.png",
-    isPopular: true,
-  },
-  {
     id: "beef-tacos",
     name: "Beef Tacos",
     price: "$14.99",
@@ -153,17 +123,6 @@ const menuItems: MenuItem[] = [
     image: "/tacos.png",
   },
   {
-    id: "sliders",
-    name: "Sliders",
-    price: "$15.99",
-    description: "",
-    ingredients: ["Beef Patty", "Brioche Bun", "Caramelised Onion", "House Aioli"],
-    allergens: ["Gluten", "Dairy"],
-    category: "food",
-    subcategory: "Apps",
-    image: "/sliders.png",
-  },
-  {
     id: "chicken-wings-fries",
     name: "Wings w/ Fries",
     price: "$17.99",
@@ -173,6 +132,17 @@ const menuItems: MenuItem[] = [
     category: "food",
     subcategory: "Apps",
     image: "/wingsfries.png",
+  },
+  {
+    id: "bruschetta",
+    name: "Bruschetta",
+    price: "$11.99",
+    description: "",
+    ingredients: ["Baguette", "Tomato", "Basil", "Garlic", "Olive Oil"],
+    allergens: ["Gluten"],
+    category: "food",
+    subcategory: "Apps",
+    image: "/bruschetta.png",
   },
 
   // ── Food — Salads ──
@@ -245,81 +215,7 @@ const menuItems: MenuItem[] = [
     image: "/beefwrap.png",
   },
 
-  // ── Food — Wraps ──
-  {
-    id: "beef-wrap",
-    name: "Beef Wrap w/ Fries",
-    price: "$14.99",
-    description: "",
-    ingredients: ["Seasoned Beef", "Wrap", "Garlic Sauce", "Fresh Veg", "Fries"],
-    allergens: ["Gluten"],
-    category: "food",
-    subcategory: "Wraps",
-    image: "/beefwrap.png",
-  },
-  {
-    id: "shawarma-wrap",
-    name: "Chicken Shawarma Wrap w/ Fries",
-    price: "$13.99",
-    description: "",
-    ingredients: ["Spiced Chicken", "Flatbread", "Garlic Sauce", "Pickles", "Fries"],
-    allergens: ["Gluten"],
-    category: "food",
-    subcategory: "Wraps",
-    image: "/chickenshawarma.png",
-    isPopular: true,
-  },
-
-  // ── Food — Mains ──
-  {
-    id: "salmon",
-    name: "Salmon",
-    price: "$25.00",
-    description: "",
-    ingredients: ["Atlantic Salmon", "Mash Potato or Rice", "Side Salad"],
-    allergens: ["Fish"],
-    category: "food",
-    subcategory: "Mains",
-    image: "/salmon.png",
-    isPopular: true,
-  },
-  {
-    id: "short-ribs",
-    name: "Beef Short Ribs",
-    price: "$30.00",
-    description: "",
-    ingredients: ["Beef Short Ribs", "Mash Potato or Rice or Fries"],
-    allergens: [],
-    category: "food",
-    subcategory: "Mains",
-    image: "/ribs.png",
-    isPopular: true,
-  },
-  {
-    id: "mix-kabob",
-    name: "Mix Kabob Plate",
-    price: "$26.99",
-    description: "",
-    ingredients: ["Mixed Kabob", "Basmati Rice", "Side Salad"],
-    allergens: [],
-    category: "food",
-    subcategory: "Mains",
-    image: "/mixplate.png",
-  },
-
   // ── Desserts ──
-  {
-    id: "creme-brulee",
-    name: "Crème Brûlée",
-    price: "$11.99",
-    description: "Classic French custard with a perfectly caramelised sugar crust, cracked tableside for the full experience.",
-    ingredients: ["Egg Yolk", "Heavy Cream", "Vanilla Bean", "Caramelised Sugar"],
-    allergens: ["Dairy", "Egg"],
-    category: "desserts",
-    subcategory: "Modern",
-    image: "/brulee.png",
-    isPopular: true,
-  },
   {
     id: "cheesecake",
     name: "Cheesecake",
@@ -340,11 +236,9 @@ const drinkGroups: { label: string; sub: string[] }[] = [
 ];
 
 const foodGroups: { label: string; sub: string[] }[] = [
-  { label: "Apps",     sub: ["Apps"]     },
-  { label: "Salads",   sub: ["Salads"]   },
+  { label: "Apps",      sub: ["Apps"]      },
+  { label: "Salads",    sub: ["Salads"]    },
   { label: "Handhelds", sub: ["Handhelds"] },
-  { label: "Wraps",    sub: ["Wraps"]    },
-  { label: "Mains",    sub: ["Mains"]    },
 ];
 
 const categories = [
@@ -500,9 +394,11 @@ function MenuCard({ item, index }: { item: MenuItem; index: number }) {
           {item.name}
         </h3>
 
-        <p className="text-[var(--cream-muted)] text-sm leading-relaxed line-clamp-3 flex-1">
-          {item.description}
-        </p>
+        {item.description.trim() ? (
+          <p className="text-[var(--cream-muted)] text-sm leading-relaxed flex-1">
+            {item.description}
+          </p>
+        ) : null}
 
         {item.ingredients.length > 0 && item.ingredients[0] !== item.name && (
           <div className="flex flex-wrap gap-1.5 pt-1">
@@ -535,7 +431,7 @@ function MenuCard({ item, index }: { item: MenuItem; index: number }) {
 
 /* ─── Page ─── */
 export default function MenuPage() {
-  const [activeCategory, setActiveCategory] = useState<string>("drinks");
+  const [activeCategory, setActiveCategory] = useState<string>("food");
   const handleCategory = useCallback((id: string) => setActiveCategory(id), []);
 
   const filteredItems = menuItems.filter((i) => i.category === activeCategory);

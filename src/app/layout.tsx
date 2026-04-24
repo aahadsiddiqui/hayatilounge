@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Hayati Lounge Ajax",
   },
   description:
-    "Hayati Lounge is Ajax's premier upscale lounge and restaurant. Enjoy shawarma wraps, beef short ribs, salmon, desserts, and more in a modern, welcoming atmosphere. Dine in Ajax, Ontario.",
+    "Hayati Lounge is Ajax's premier upscale lounge and restaurant. Apps, salads, handhelds, drinks, and cheesecake in a modern, welcoming atmosphere. Dine in Ajax, Ontario.",
 
   keywords: [
     "Hayati Lounge",
@@ -45,14 +45,10 @@ export const metadata: Metadata = {
     "Ontario lounge",
     "upscale lounge Ajax",
     "Middle Eastern restaurant Ajax",
-    "shawarma Ajax",
-    "shish kabob Ajax",
     "desserts Ajax",
-    "crème brûlée Ajax",
     "cheesecake Ajax",
-    "salmon restaurant Ajax",
-    "beef short ribs Ajax",
-    "garlic shrimp Ajax",
+    "chicken wings Ajax",
+    "burgers Ajax",
     "best lounge Ajax",
     "best restaurant Ajax",
     "date night Ajax",
@@ -81,7 +77,7 @@ export const metadata: Metadata = {
     siteName: "Hayati Lounge",
     title: "Hayati Lounge | Restaurant & Lounge in Ajax, Ontario",
     description:
-      "Ajax's upscale lounge & restaurant. Shawarma wraps, short ribs, salmon, garlic shrimp, and decadent desserts. Experience Hayati.",
+      "Ajax's upscale lounge & restaurant. Apps, handhelds, drinks, and cheesecake. Experience Hayati.",
     images: [
       {
         url: "/hero.jpg",
@@ -96,7 +92,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hayati Lounge | Restaurant & Lounge in Ajax, Ontario",
     description:
-      "Ajax's upscale lounge & restaurant. Shawarma wraps, short ribs, salmon, garlic shrimp, and decadent desserts.",
+      "Ajax's upscale lounge & restaurant. Apps, handhelds, drinks, and cheesecake.",
     images: ["/hero.jpg"],
   },
 

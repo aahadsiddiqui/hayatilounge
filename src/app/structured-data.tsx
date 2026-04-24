@@ -4,21 +4,23 @@ export function RestaurantJsonLd() {
     "@type": "Restaurant",
     name: "Hayati Lounge",
     description:
-      "Hayati Lounge is an upscale lounge and restaurant in Ajax, Ontario offering shawarma wraps, beef short ribs, salmon, garlic shrimp, desserts, and more in a modern and welcoming atmosphere.",
+      "Hayati Lounge is an upscale lounge and restaurant in Ajax, Ontario serving apps, salads, handhelds, desserts, and drinks in a modern and welcoming atmosphere.",
     url: "https://hayatilounge.vercel.app",
     image: "https://hayatilounge.vercel.app/hero.jpg",
     logo: "https://hayatilounge.vercel.app/logo.jpg",
     telephone: "",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "190 Station St, Unit 1",
       addressLocality: "Ajax",
-      addressRegion: "Ontario",
+      addressRegion: "ON",
+      postalCode: "L1S 2G3",
       addressCountry: "CA",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 43.8509,
-      longitude: -79.0204,
+      latitude: 43.8506,
+      longitude: -79.0278,
     },
     areaServed: [
       { "@type": "City", name: "Ajax" },
@@ -71,13 +73,10 @@ export function RestaurantJsonLd() {
             { "@type": "MenuItem", name: "Truffle Fries", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Poutine", offers: { "@type": "Offer", price: "12.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Loaded Fries", offers: { "@type": "Offer", price: "16.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Bruschetta", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Garlic Shrimp", offers: { "@type": "Offer", price: "9.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Shish Kabob w/ Fries", offers: { "@type": "Offer", price: "15.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Beef Tacos", offers: { "@type": "Offer", price: "14.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Shrimp Tacos", offers: { "@type": "Offer", price: "15.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Sliders", offers: { "@type": "Offer", price: "15.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Wings w/ Fries", offers: { "@type": "Offer", price: "17.99", priceCurrency: "CAD" } },
+            { "@type": "MenuItem", name: "Bruschetta", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
           ],
         },
         {
@@ -100,26 +99,8 @@ export function RestaurantJsonLd() {
         },
         {
           "@type": "MenuSection",
-          name: "Wraps",
-          hasMenuItem: [
-            { "@type": "MenuItem", name: "Chicken Shawarma Wrap w/ Fries", offers: { "@type": "Offer", price: "13.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Beef Wrap w/ Fries", offers: { "@type": "Offer", price: "14.99", priceCurrency: "CAD" } },
-          ],
-        },
-        {
-          "@type": "MenuSection",
-          name: "Mains",
-          hasMenuItem: [
-            { "@type": "MenuItem", name: "Salmon", offers: { "@type": "Offer", price: "25.00", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Beef Short Ribs", offers: { "@type": "Offer", price: "30.00", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Mix Kabob Plate", offers: { "@type": "Offer", price: "26.99", priceCurrency: "CAD" } },
-          ],
-        },
-        {
-          "@type": "MenuSection",
           name: "Desserts",
           hasMenuItem: [
-            { "@type": "MenuItem", name: "Crème Brûlée", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Cheesecake", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
           ],
         },
@@ -127,11 +108,7 @@ export function RestaurantJsonLd() {
           "@type": "MenuSection",
           name: "Drinks",
           hasMenuItem: [
-            { "@type": "MenuItem", name: "Coke", offers: { "@type": "Offer", price: "2.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Coke Zero", offers: { "@type": "Offer", price: "2.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Ginger Ale", offers: { "@type": "Offer", price: "2.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Sprite", offers: { "@type": "Offer", price: "2.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Fuze", offers: { "@type": "Offer", price: "2.99", priceCurrency: "CAD" } },
+            { "@type": "MenuItem", name: "Soft Drinks", description: "Coke, Coke Zero, Fuze, Ginger Ale, Sprite", offers: { "@type": "Offer", price: "2.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Red Bull", offers: { "@type": "Offer", price: "5.50", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Barbican", offers: { "@type": "Offer", price: "5.50", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Green Tea", offers: { "@type": "Offer", price: "3.99", priceCurrency: "CAD" } },
