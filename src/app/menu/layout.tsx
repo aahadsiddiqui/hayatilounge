@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Explore the full Hayati Lounge menu. Apps, salads, wraps, mains, desserts and artisan mocktails. Serving Ajax, Ontario with dishes like beef short ribs, salmon, chicken shawarma, garlic shrimp, crème brûlée, and cheesecake.",
+    "Explore the full Hayati Lounge menu. Apps, salads, wraps, mains, and desserts. Serving Ajax, Ontario with dishes like beef short ribs, salmon, chicken shawarma, garlic shrimp, crème brûlée, and cheesecake.",
   keywords: [
     "Hayati Lounge menu",
     "Ajax restaurant menu",
@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     "chicken wings Ajax",
     "crème brûlée Ajax",
     "cheesecake Ajax",
-    "mocktails Ajax",
     "food menu Ajax Ontario",
     "Middle Eastern food Ajax",
     "shish kabob Ajax",
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Menu | Hayati Lounge Ajax",
     description:
-      "Apps, wraps, mains, desserts & artisan mocktails. See the full Hayati Lounge menu — Ajax, Ontario's upscale lounge & restaurant.",
+      "Apps, wraps, mains, and desserts. See the full Hayati Lounge menu — Ajax, Ontario's upscale lounge & restaurant.",
     url: "https://hayatilounge.vercel.app/menu",
     images: [
       {

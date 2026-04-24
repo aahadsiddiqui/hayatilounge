@@ -22,32 +22,41 @@ interface MenuItem {
 /* ─── Menu Data ─── */
 const menuItems: MenuItem[] = [
   // ── Soft Drinks ──
-  { id: "coca-cola",  name: "Coca Cola",  price: "$2.99",  description: "Classic Coca Cola served ice cold.",             ingredients: ["Coca Cola"],                        allergens: [], category: "drinks", subcategory: "Soft Drinks" },
+  { id: "coca-cola",  name: "Coke",  price: "$2.99",  description: "Classic Coke served ice cold.",             ingredients: ["Coke"],                        allergens: [], category: "drinks", subcategory: "Soft Drinks" },
   { id: "coke-zero", name: "Coke Zero",  price: "$2.99",  description: "Coke Zero Sugar, served ice cold.",               ingredients: ["Coke Zero"],                        allergens: [], category: "drinks", subcategory: "Soft Drinks" },
   { id: "gingerale", name: "Ginger Ale", price: "$2.99",  description: "Refreshing ginger ale, perfectly chilled.",       ingredients: ["Ginger Ale"],                       allergens: [], category: "drinks", subcategory: "Soft Drinks" },
   { id: "sprite",    name: "Sprite",     price: "$2.99",  description: "Lemon-lime soda served ice cold.",                 ingredients: ["Sprite"],                           allergens: [], category: "drinks", subcategory: "Soft Drinks" },
   { id: "fuze",      name: "Fuze",       price: "$2.99",  description: "Fuze iced tea, chilled and refreshing.",           ingredients: ["Fuze Iced Tea"],                    allergens: [], category: "drinks", subcategory: "Soft Drinks" },
   // ── Energy ──
-  { id: "red-bull",  name: "Red Bull",   price: "$4.99",  description: "Red Bull energy drink, served ice cold.",          ingredients: ["Red Bull"],                         allergens: [], category: "drinks", subcategory: "Energy Drink" },
+  { id: "red-bull",  name: "Red Bull",   price: "$5.50",  description: "Red Bull energy drink, served ice cold.",          ingredients: ["Red Bull"],                         allergens: [], category: "drinks", subcategory: "Energy Drink" },
+  { id: "barbican",  name: "Barbican",  price: "$5.50",  description: "Malt beverage, served chilled.",                 ingredients: ["Barbican"],                        allergens: ["Gluten"], category: "drinks", subcategory: "Bottled" },
   // ── Tea ──
-  { id: "green-tea", name: "Green Tea",  price: "$2.99",  description: "Hot green tea, brewed fresh.",                     ingredients: ["Green Tea", "Water"],               allergens: [], category: "drinks", subcategory: "Tea" },
-  { id: "black-tea", name: "Black Tea",  price: "$2.99",  description: "Hot black tea, rich and smooth.",                  ingredients: ["Black Tea", "Water"],               allergens: [], category: "drinks", subcategory: "Tea" },
-  { id: "tea-pot",   name: "Tea Pot",    price: "$10.99", description: "A full pot of tea — perfect to share.",            ingredients: ["Tea Leaves", "Water"],              allergens: [], category: "drinks", subcategory: "Tea" },
-  // ── Mocktails ──
-  { id: "cairo-breeze", name: "Cairo Breeze", price: "$10.99", description: "A signature blend that evokes warm evenings and cool breezes.", ingredients: ["Mocktail Blend"], allergens: [], category: "drinks", subcategory: "Mocktails", isPopular: true },
-  { id: "moonlit",      name: "Moonlit",      price: "$10.99", description: "A mysterious, delicate mocktail with subtle floral notes.",      ingredients: ["Mocktail Blend"], allergens: [], category: "drinks", subcategory: "Mocktails", isPopular: true },
-  // ── Frozen ──
-  { id: "pina-colada",  name: "Piña Colada",  price: "$10.99", description: "Frozen, non-alcoholic piña colada — tropical and refreshing.", ingredients: ["Pineapple", "Coconut Cream", "Ice"], allergens: [], category: "drinks", subcategory: "Frozen Drinks" },
-  { id: "daiquiri",     name: "Daiquiri",      price: "$10.99", description: "Frozen fruit daiquiri — smooth, icy, and vibrant.",             ingredients: ["Fruit", "Syrup", "Ice"],             allergens: [], category: "drinks", subcategory: "Frozen Drinks" },
-  { id: "cherry-chill", name: "Cherry Chill",  price: "$10.99", description: "Frozen cherry drink with a subtle sweet-tart finish.",          ingredients: ["Cherry", "Syrup", "Ice"],            allergens: [], category: "drinks", subcategory: "Frozen Drinks" },
+  { id: "green-tea", name: "Green Tea",  price: "$3.99",  description: "Hot green tea, brewed fresh.",                     ingredients: ["Green Tea", "Water"],               allergens: [], category: "drinks", subcategory: "Tea" },
+  { id: "black-tea", name: "Black Tea",  price: "$3.99",  description: "Hot black tea, rich and smooth.",                  ingredients: ["Black Tea", "Water"],               allergens: [], category: "drinks", subcategory: "Tea" },
+  { id: "peppermint-tea", name: "Peppermint Tea", price: "$3.99", description: "Refreshing hot peppermint tea.",         ingredients: ["Peppermint", "Water"],            allergens: [], category: "drinks", subcategory: "Tea" },
+  { id: "mint-tea",  name: "Mint Tea",   price: "$3.99",  description: "Hot mint tea, bright and soothing.",            ingredients: ["Mint", "Water"],                  allergens: [], category: "drinks", subcategory: "Tea" },
+  { id: "karak-chai", name: "Karak Chai", price: "$5.99",  description: "Rich, spiced tea brewed with milk — full-bodied and aromatic.", ingredients: ["Tea", "Milk", "Spices"], allergens: ["Dairy"], category: "drinks", subcategory: "Tea" },
+  { id: "saffron-tea", name: "Saffron Tea", price: "$6.99", description: "Aromatic saffron-infused tea, served hot.",      ingredients: ["Saffron", "Tea", "Water"],         allergens: [], category: "drinks", subcategory: "Tea" },
+  { id: "tea-pot",   name: "Tea Pot",    price: "$12.99", description: "A full pot of tea — perfect to share.",            ingredients: ["Tea Leaves", "Water"],              allergens: [], category: "drinks", subcategory: "Tea" },
 
   // ── Food — Apps ──
   {
     id: "fries",
     name: "Fries",
-    price: "$5.99",
-    description: "Golden, hand-cut fries seasoned with sea salt — crispy and perfectly golden.",
+    price: "$7.99",
+    description: "",
     ingredients: ["Potatoes", "Sea Salt", "House Spice"],
+    allergens: [],
+    category: "food",
+    subcategory: "Apps",
+    image: "/frenchfries.png",
+  },
+  {
+    id: "cajun-fries",
+    name: "Cajun Fries",
+    price: "$8.99",
+    description: "",
+    ingredients: ["Potatoes", "Cajun Spice", "Sea Salt"],
     allergens: [],
     category: "food",
     subcategory: "Apps",
@@ -56,8 +65,8 @@ const menuItems: MenuItem[] = [
   {
     id: "truffle-fries",
     name: "Truffle Fries",
-    price: "$9.99",
-    description: "Crispy fries tossed in truffle oil and finished with shaved parmesan and fresh herbs.",
+    price: "$11.99",
+    description: "",
     ingredients: ["Potatoes", "Truffle Oil", "Parmesan", "Fresh Herbs"],
     allergens: ["Dairy"],
     category: "food",
@@ -66,10 +75,43 @@ const menuItems: MenuItem[] = [
     isPopular: true,
   },
   {
+    id: "poutine",
+    name: "Poutine",
+    price: "$12.99",
+    description: "",
+    ingredients: ["Fries", "Cheese Curds", "Gravy"],
+    allergens: ["Dairy", "Gluten"],
+    category: "food",
+    subcategory: "Apps",
+    image: "/frenchfries.png",
+  },
+  {
+    id: "loaded-fries",
+    name: "Loaded Fries",
+    price: "$16.99",
+    description: "",
+    ingredients: ["Fries", "Cheese", "Toppings"],
+    allergens: ["Dairy", "Gluten"],
+    category: "food",
+    subcategory: "Apps",
+    image: "/loaded-fries.png",
+  },
+  {
+    id: "bruschetta",
+    name: "Bruschetta",
+    price: "$11.99",
+    description: "",
+    ingredients: ["Baguette", "Tomato", "Basil", "Garlic", "Olive Oil"],
+    allergens: ["Gluten"],
+    category: "food",
+    subcategory: "Apps",
+    image: "/bruschetta.png",
+  },
+  {
     id: "shish-kabob-fries",
     name: "Shish Kabob w/ Fries",
     price: "$15.99",
-    description: "Tender, seasoned shish kabob skewers served alongside crispy golden fries.",
+    description: "",
     ingredients: ["Seasoned Meat", "House Spice", "Fries"],
     allergens: [],
     category: "food",
@@ -80,7 +122,7 @@ const menuItems: MenuItem[] = [
     id: "garlic-shrimp-app",
     name: "Garlic Shrimp",
     price: "$9.99",
-    description: "Plump shrimp sautéed in rich garlic butter with a hint of lemon and fresh parsley.",
+    description: "",
     ingredients: ["Tiger Shrimp", "Garlic Butter", "Lemon", "Parsley"],
     allergens: ["Shellfish", "Dairy"],
     category: "food",
@@ -91,8 +133,8 @@ const menuItems: MenuItem[] = [
   {
     id: "beef-tacos",
     name: "Beef Tacos",
-    price: "$15.99",
-    description: "Three soft-shell tacos filled with seasoned beef, pico de gallo, and house crema.",
+    price: "$14.99",
+    description: "",
     ingredients: ["Seasoned Beef", "Soft Tortilla", "Pico de Gallo", "House Crema"],
     allergens: ["Gluten"],
     category: "food",
@@ -103,7 +145,7 @@ const menuItems: MenuItem[] = [
     id: "shrimp-tacos",
     name: "Shrimp Tacos",
     price: "$15.99",
-    description: "Three soft-shell tacos with seasoned shrimp, slaw, and a zesty lime crema.",
+    description: "",
     ingredients: ["Shrimp", "Soft Tortilla", "Slaw", "Lime Crema"],
     allergens: ["Shellfish", "Gluten"],
     category: "food",
@@ -114,7 +156,7 @@ const menuItems: MenuItem[] = [
     id: "sliders",
     name: "Sliders",
     price: "$15.99",
-    description: "Three juicy sliders on toasted brioche buns with caramelised onions and house aioli.",
+    description: "",
     ingredients: ["Beef Patty", "Brioche Bun", "Caramelised Onion", "House Aioli"],
     allergens: ["Gluten", "Dairy"],
     category: "food",
@@ -123,9 +165,9 @@ const menuItems: MenuItem[] = [
   },
   {
     id: "chicken-wings-fries",
-    name: "Chicken Wings w/ Fries",
-    price: "$18.99",
-    description: "Crispy golden chicken wings tossed in your choice of sauce, served with a side of hand-cut fries.",
+    name: "Wings w/ Fries",
+    price: "$17.99",
+    description: "",
     ingredients: ["Chicken Wings", "House Spice Rub", "Choice of Sauce", "Fries"],
     allergens: ["Gluten"],
     category: "food",
@@ -137,8 +179,8 @@ const menuItems: MenuItem[] = [
   {
     id: "caesar-salad",
     name: "Caesar Salad",
-    price: "$10.99",
-    description: "Crisp romaine, shaved parmesan, house-made croutons, and our signature Caesar dressing. Add chicken +$4.99 · Add shrimp +$5.99",
+    price: "$11.99",
+    description: "",
     ingredients: ["Romaine", "Parmesan", "Croutons", "Caesar Dressing"],
     allergens: ["Gluten", "Dairy", "Egg"],
     category: "food",
@@ -148,8 +190,8 @@ const menuItems: MenuItem[] = [
   {
     id: "greek-salad",
     name: "Greek Salad",
-    price: "$11.99",
-    description: "Sun-ripened tomatoes, cucumber, kalamata olives, red onion, and creamy feta with house vinaigrette.",
+    price: "$12.99",
+    description: "",
     ingredients: ["Tomato", "Cucumber", "Kalamata Olives", "Feta", "Red Onion"],
     allergens: ["Dairy"],
     category: "food",
@@ -157,12 +199,58 @@ const menuItems: MenuItem[] = [
     image: "/greek.png",
   },
 
+  // ── Food — Handhelds (w/ fries) ──
+  {
+    id: "buffalo-sandwich",
+    name: "Buffalo Sandwich",
+    price: "$16.99",
+    description: "",
+    ingredients: ["Chicken", "Buffalo Sauce", "Bun", "Fries"],
+    allergens: ["Gluten", "Dairy"],
+    category: "food",
+    subcategory: "Handhelds",
+    image: "/buffalo-sandwich.png",
+  },
+  {
+    id: "chicken-burger",
+    name: "Chicken Burger",
+    price: "$15.99",
+    description: "",
+    ingredients: ["Chicken", "Bun", "Lettuce", "Tomato", "Fries"],
+    allergens: ["Gluten"],
+    category: "food",
+    subcategory: "Handhelds",
+    image: "/chicken-burger.png",
+  },
+  {
+    id: "beef-burger",
+    name: "Beef Burger",
+    price: "$16.99",
+    description: "",
+    ingredients: ["Beef Patty", "Bun", "Cheese", "Fries"],
+    allergens: ["Gluten", "Dairy"],
+    category: "food",
+    subcategory: "Handhelds",
+    image: "/sliders.png",
+  },
+  {
+    id: "club-wrap",
+    name: "Club Wrap",
+    price: "$14.99",
+    description: "",
+    ingredients: ["Chicken", "Bacon", "Wrap", "Lettuce", "Fries"],
+    allergens: ["Gluten"],
+    category: "food",
+    subcategory: "Handhelds",
+    image: "/beefwrap.png",
+  },
+
   // ── Food — Wraps ──
   {
     id: "beef-wrap",
     name: "Beef Wrap w/ Fries",
     price: "$14.99",
-    description: "Seasoned beef in a warm toasted wrap with fresh vegetables and house garlic sauce, served with crispy fries.",
+    description: "",
     ingredients: ["Seasoned Beef", "Wrap", "Garlic Sauce", "Fresh Veg", "Fries"],
     allergens: ["Gluten"],
     category: "food",
@@ -173,7 +261,7 @@ const menuItems: MenuItem[] = [
     id: "shawarma-wrap",
     name: "Chicken Shawarma Wrap w/ Fries",
     price: "$13.99",
-    description: "Slow-roasted spiced chicken in a warm wrap with garlic sauce, pickles, and fresh tomato, served with fries.",
+    description: "",
     ingredients: ["Spiced Chicken", "Flatbread", "Garlic Sauce", "Pickles", "Fries"],
     allergens: ["Gluten"],
     category: "food",
@@ -187,7 +275,7 @@ const menuItems: MenuItem[] = [
     id: "salmon",
     name: "Salmon",
     price: "$25.00",
-    description: "Pan-seared Atlantic salmon served with mash potato or rice and a fresh side salad.",
+    description: "",
     ingredients: ["Atlantic Salmon", "Mash Potato or Rice", "Side Salad"],
     allergens: ["Fish"],
     category: "food",
@@ -199,7 +287,7 @@ const menuItems: MenuItem[] = [
     id: "short-ribs",
     name: "Beef Short Ribs",
     price: "$30.00",
-    description: "Slow-braised beef short ribs, fall-off-the-bone tender, served with mash potato, rice, or fries.",
+    description: "",
     ingredients: ["Beef Short Ribs", "Mash Potato or Rice or Fries"],
     allergens: [],
     category: "food",
@@ -211,7 +299,7 @@ const menuItems: MenuItem[] = [
     id: "mix-kabob",
     name: "Mix Kabob Plate",
     price: "$26.99",
-    description: "A generous mix kabob plate served with fragrant rice and a fresh side salad.",
+    description: "",
     ingredients: ["Mixed Kabob", "Basmati Rice", "Side Salad"],
     allergens: [],
     category: "food",
@@ -235,9 +323,9 @@ const menuItems: MenuItem[] = [
   {
     id: "cheesecake",
     name: "Cheesecake",
-    price: "$10.99",
-    description: "Velvety New York-style cheesecake on a buttery graham crust, topped with a fresh berry compote.",
-    ingredients: ["Cream Cheese", "Graham Crust", "Berry Compote", "Vanilla"],
+    price: "$11.99",
+    description: "Velvety New York–style cheesecake on a buttery graham crust. Choose strawberry, vanilla, or chocolate drizzle.",
+    ingredients: ["Cream Cheese", "Graham Crust", "Drizzle"],
     allergens: ["Dairy", "Gluten", "Egg"],
     category: "desserts",
     subcategory: "Modern",
@@ -247,17 +335,16 @@ const menuItems: MenuItem[] = [
 
 /* ─── Groups ─── */
 const drinkGroups: { label: string; sub: string[] }[] = [
-  { label: "Pops",          sub: ["Soft Drinks", "Energy Drink"] },
-  { label: "Teas",          sub: ["Tea"] },
-  { label: "Mocktails",     sub: ["Mocktails"] },
-  { label: "Frozen Drinks", sub: ["Frozen Drinks"] },
+  { label: "Pops & Bottles", sub: ["Soft Drinks", "Energy Drink", "Bottled"] },
+  { label: "Teas",           sub: ["Tea"] },
 ];
 
 const foodGroups: { label: string; sub: string[] }[] = [
-  { label: "Apps",   sub: ["Apps"]   },
-  { label: "Salads", sub: ["Salads"] },
-  { label: "Wraps",  sub: ["Wraps"]  },
-  { label: "Mains",  sub: ["Mains"]  },
+  { label: "Apps",     sub: ["Apps"]     },
+  { label: "Salads",   sub: ["Salads"]   },
+  { label: "Handhelds", sub: ["Handhelds"] },
+  { label: "Wraps",    sub: ["Wraps"]    },
+  { label: "Mains",    sub: ["Mains"]    },
 ];
 
 const categories = [
@@ -309,13 +396,19 @@ function FoodCard({ item, index }: { item: MenuItem; index: number }) {
       className="group relative border border-[var(--border)] rounded-2xl bg-[var(--bg-card)] hover:border-[var(--border-hover)] overflow-hidden flex flex-col"
     >
       {/* ── Image ── */}
-      <div className="relative h-56 sm:h-64 overflow-hidden shrink-0">
-        {item.image && (
+      <div className="relative h-56 sm:h-64 overflow-hidden shrink-0 bg-gradient-to-br from-[var(--bg)] to-[var(--bg-card)]">
+        {item.image ? (
           <img
             src={item.image}
             alt={item.name}
             className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-700 ease-out"
           />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center p-6">
+            <span className="font-playfair text-2xl sm:text-3xl text-center text-[var(--gold)]/35 leading-snug">
+              {item.name}
+            </span>
+          </div>
         )}
         {/* Deep gradient to bleed into card bg */}
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-[var(--bg-card)]/30 to-transparent" />
@@ -341,9 +434,11 @@ function FoodCard({ item, index }: { item: MenuItem; index: number }) {
           {item.name}
         </h3>
 
-        <p className="text-[var(--cream-muted)] text-sm leading-relaxed flex-1">
-          {item.description}
-        </p>
+        {item.description.trim() && (
+          <p className="text-[var(--cream-muted)] text-sm leading-relaxed flex-1">
+            {item.description}
+          </p>
+        )}
 
         {/* Ingredient chips */}
         <div className="flex flex-wrap gap-1.5 pt-1">
