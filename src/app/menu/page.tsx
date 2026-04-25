@@ -202,7 +202,7 @@ const menuItems: MenuItem[] = [
     allergens: ["Gluten", "Dairy"],
     category: "food",
     subcategory: "Handhelds",
-    image: "/sliders.png",
+    image: "/beef-burger.png",
   },
   {
     id: "club-wrap",
