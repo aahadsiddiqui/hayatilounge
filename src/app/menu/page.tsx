@@ -32,6 +32,7 @@ const menuItems: MenuItem[] = [
     allergens: [],
     category: "drinks",
     subcategory: "Soft Drinks",
+    image: "/soft-drinks.png",
   },
   // ── Energy ──
   { id: "red-bull",  name: "Red Bull",   price: "$5.50",  description: "Red Bull energy drink, served ice cold.",          ingredients: ["Red Bull"],                         allergens: [], category: "drinks", subcategory: "Energy Drink" },
@@ -368,7 +369,7 @@ function FoodCard({ item, index }: { item: MenuItem; index: number }) {
   );
 }
 
-/* ─── Drinks / Desserts Card (text-only) ─── */
+/* ─── Drinks / Desserts Card (optional image on top) ─── */
 function MenuCard({ item, index }: { item: MenuItem; index: number }) {
   return (
     <motion.div
@@ -381,15 +382,35 @@ function MenuCard({ item, index }: { item: MenuItem; index: number }) {
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--gold)]/0 to-transparent group-hover:via-[var(--gold)]/45 transition-all duration-500" />
 
-      <div className="p-7 sm:p-8 flex flex-col gap-3 h-full">
-        <div className="flex items-start justify-between gap-2">
-          <span className="font-playfair text-[var(--gold)] text-xl font-light">{item.price}</span>
-          {item.isPopular && (
-            <span className="text-[10px] tracking-[0.22em] text-[var(--gold)] uppercase border border-[var(--gold)]/28 rounded-full px-2.5 py-0.5 shrink-0">
-              Popular
-            </span>
-          )}
+      {item.image && (
+        <div className="relative h-44 sm:h-48 w-full overflow-hidden border-b border-[var(--border)]/80">
+          <img
+            src={item.image}
+            alt={item.name}
+            className="h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)]/90 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-3 right-3">
+            <span className="font-playfair text-lg text-[var(--gold)] drop-shadow-md">{item.price}</span>
+          </div>
         </div>
+      )}
+
+      <div className="p-7 sm:p-8 flex flex-col gap-3 h-full">
+        {(!item.image || item.isPopular) && (
+          <div
+            className={`flex items-start gap-2 ${item.image ? "justify-end" : "justify-between"}`}
+          >
+            {!item.image && (
+              <span className="font-playfair text-[var(--gold)] text-xl font-light">{item.price}</span>
+            )}
+            {item.isPopular && (
+              <span className="text-[10px] tracking-[0.22em] text-[var(--gold)] uppercase border border-[var(--gold)]/28 rounded-full px-2.5 py-0.5 shrink-0">
+                Popular
+              </span>
+            )}
+          </div>
+        )}
 
         <h3 className="font-playfair text-lg sm:text-xl font-light text-[var(--cream)] leading-snug">
           {item.name}
