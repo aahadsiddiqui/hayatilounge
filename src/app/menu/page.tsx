@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiInstagram } from "react-icons/si";
+import { HalalBadge } from "@/components/HalalBadge";
 
 /* ─── Types ─── */
 interface MenuItem {
@@ -87,7 +88,7 @@ const menuItems: MenuItem[] = [
     allergens: ["Dairy", "Gluten"],
     category: "food",
     subcategory: "Apps",
-    image: "/frenchfries.png",
+    image: "/poutine.png",
   },
   {
     id: "loaded-fries",
@@ -126,8 +127,8 @@ const menuItems: MenuItem[] = [
     id: "chicken-wings-fries",
     name: "Wings w/ Fries",
     price: "$17.99",
-    description: "",
-    ingredients: ["Chicken Wings", "House Spice Rub", "Choice of Sauce", "Fries"],
+    description: "Sauces: mild, medium, hot, honey garlic, BBQ.",
+    ingredients: ["Chicken wings", "Fries"],
     allergens: ["Gluten"],
     category: "food",
     subcategory: "Apps",
@@ -208,11 +209,11 @@ const menuItems: MenuItem[] = [
     name: "Club Wrap",
     price: "$14.99",
     description: "",
-    ingredients: ["Chicken", "Bacon", "Wrap", "Lettuce", "Fries"],
+    ingredients: ["Chicken", "Beef bacon", "Wrap", "Lettuce", "Fries"],
     allergens: ["Gluten"],
     category: "food",
     subcategory: "Handhelds",
-    image: "/beefwrap.png",
+    image: "/club-wrap.png",
   },
 
   // ── Desserts ──
@@ -470,6 +471,9 @@ export default function MenuPage() {
         <p className="text-[var(--cream-muted)] text-base max-w-md mx-auto leading-relaxed">
           Each item crafted with care, the finest ingredients, and a passion for exceptional taste.
         </p>
+        <div className="mt-6 flex justify-center">
+          <HalalBadge />
+        </div>
       </motion.div>
 
       {/* ── Sticky Category Nav ── */}

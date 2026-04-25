@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { SiInstagram, SiGoogle } from "react-icons/si";
+import { HalalBadge } from "@/components/HalalBadge";
 
 /* ─── Data ─── */
 const featuredDishes = [
@@ -159,6 +160,15 @@ export default function Home() {
           >
             Elevated food · drinks & tea · sweet endings
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.12 }}
+            className="mb-8"
+          >
+            <HalalBadge size="md" />
+          </motion.div>
 
           {/* CTAs */}
           <motion.div
@@ -443,9 +453,12 @@ export default function Home() {
       {/* ── Footer ── */}
       <footer className="border-t border-[var(--gold)]/10 py-10 px-5 sm:px-10">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
-          <div className="flex items-center gap-3">
-            <img src="/logo.jpg" alt="Hayati Lounge" className="w-8 h-8 rounded-full object-cover border border-[var(--gold)]/20" />
-            <span className="font-playfair text-[var(--cream-muted)] text-sm italic">Hayati Lounge</span>
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5">
+            <div className="flex items-center gap-3">
+              <img src="/logo.jpg" alt="Hayati Lounge" className="w-8 h-8 rounded-full object-cover border border-[var(--gold)]/20" />
+              <span className="font-playfair text-[var(--cream-muted)] text-sm italic">Hayati Lounge</span>
+            </div>
+            <HalalBadge size="sm" />
           </div>
           <div className="flex items-center gap-5">
             <a href="https://instagram.com/hayatilounge" target="_blank" rel="noopener noreferrer"

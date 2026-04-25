@@ -4,7 +4,7 @@ export function RestaurantJsonLd() {
     "@type": "Restaurant",
     name: "Hayati Lounge",
     description:
-      "Hayati Lounge is an upscale lounge and restaurant in Ajax, Ontario serving apps, salads, handhelds, desserts, and drinks in a modern and welcoming atmosphere.",
+      "Hayati Lounge is a halal-friendly lounge and restaurant in Ajax, Ontario serving apps, salads, handhelds, desserts, and drinks in a modern and welcoming atmosphere.",
     url: "https://hayatilounge.vercel.app",
     image: "https://hayatilounge.vercel.app/hero.jpg",
     logo: "https://hayatilounge.vercel.app/logo.jpg",
@@ -75,7 +75,7 @@ export function RestaurantJsonLd() {
             { "@type": "MenuItem", name: "Loaded Fries", offers: { "@type": "Offer", price: "16.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Beef Tacos", offers: { "@type": "Offer", price: "14.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Shrimp Tacos", offers: { "@type": "Offer", price: "15.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Wings w/ Fries", offers: { "@type": "Offer", price: "17.99", priceCurrency: "CAD" } },
+            { "@type": "MenuItem", name: "Wings w/ Fries", description: "Sauces: mild, medium, hot, honey garlic, BBQ", offers: { "@type": "Offer", price: "17.99", priceCurrency: "CAD" } },
             { "@type": "MenuItem", name: "Bruschetta", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
           ],
         },
