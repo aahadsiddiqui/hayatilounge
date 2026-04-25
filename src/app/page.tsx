@@ -9,7 +9,7 @@ import { HalalBadge } from "@/components/HalalBadge";
 const featuredDishes = [
   { name: "Loaded Fries",      price: "$16.99", image: "/loaded-fries.png",    tag: "Apps"      },
   { name: "Wings w/ Fries",    price: "$17.99", image: "/wingsfries.png",      tag: "Apps"      },
-  { name: "Chicken Burger",    price: "$15.99", image: "/chicken-burger.png", tag: "Handhelds" },
+  { name: "Grilled Chicken Deluxe", price: "$15.99", image: "/chicken-burger.png", tag: "Handhelds" },
   { name: "Bruschetta",        price: "$11.99", image: "/bruschetta.png",      tag: "Apps"      },
   { name: "Beef Tacos",        price: "$14.99", image: "/beeftaco.png",        tag: "Apps"      },
   { name: "Cheesecake",        price: "$11.99", image: "/cheesecake.png",      tag: "Desserts"  },

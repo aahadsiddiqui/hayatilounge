@@ -174,7 +174,7 @@ const menuItems: MenuItem[] = [
   // ── Food — Handhelds (w/ fries) ──
   {
     id: "buffalo-sandwich",
-    name: "Buffalo Sandwich",
+    name: "Crispy Buffalo Chicken Sandwich",
     price: "$16.99",
     description: "",
     ingredients: ["Chicken", "Buffalo Sauce", "Bun", "Fries"],
@@ -185,7 +185,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: "chicken-burger",
-    name: "Chicken Burger",
+    name: "Grilled Chicken Deluxe",
     price: "$15.99",
     description: "",
     ingredients: ["Chicken", "Bun", "Lettuce", "Tomato", "Fries"],
@@ -196,7 +196,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: "beef-burger",
-    name: "Beef Burger",
+    name: "Signature Beef Burger",
     price: "$16.99",
     description: "",
     ingredients: ["Beef Patty", "Bun", "Cheese", "Fries"],
@@ -207,7 +207,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: "club-wrap",
-    name: "Club Wrap",
+    name: "Grilled Chicken Club Wrap",
     price: "$14.99",
     description: "",
     ingredients: ["Chicken", "Beef bacon", "Wrap", "Lettuce", "Fries"],

@@ -91,10 +91,10 @@ export function RestaurantJsonLd() {
           "@type": "MenuSection",
           name: "Handhelds (with fries)",
           hasMenuItem: [
-            { "@type": "MenuItem", name: "Buffalo Sandwich", offers: { "@type": "Offer", price: "16.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Chicken Burger", offers: { "@type": "Offer", price: "15.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Beef Burger", offers: { "@type": "Offer", price: "16.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Club Wrap", offers: { "@type": "Offer", price: "14.99", priceCurrency: "CAD" } },
+            { "@type": "MenuItem", name: "Crispy Buffalo Chicken Sandwich", offers: { "@type": "Offer", price: "16.99", priceCurrency: "CAD" } },
+            { "@type": "MenuItem", name: "Grilled Chicken Deluxe", offers: { "@type": "Offer", price: "15.99", priceCurrency: "CAD" } },
+            { "@type": "MenuItem", name: "Signature Beef Burger", offers: { "@type": "Offer", price: "16.99", priceCurrency: "CAD" } },
+            { "@type": "MenuItem", name: "Grilled Chicken Club Wrap", offers: { "@type": "Offer", price: "14.99", priceCurrency: "CAD" } },
           ],
         },
         {
