@@ -4,12 +4,13 @@ type HalalBadgeProps = {
 };
 
 const sizeClass: Record<NonNullable<HalalBadgeProps["size"]>, string> = {
-  sm: "h-12 w-auto sm:h-14 max-w-[min(90vw,300px)]",
-  md: "h-[5.5rem] w-auto sm:h-24 md:h-32 max-w-[min(95vw,36rem)]",
+  sm: "h-14 sm:h-16",
+  md: "h-24 sm:h-28",
 };
 
 /**
- * Official-style halal mark (Arabic + HALAL + accents). Image: bronze on black.
+ * Halal mark (Arabic + HALAL). The source image is a padded square on near-black,
+ * so it is cropped to its artwork and blended so the black drops out on marble.
  */
 export function HalalBadge({ className = "", size = "md" }: HalalBadgeProps) {
   return (
@@ -17,9 +18,9 @@ export function HalalBadge({ className = "", size = "md" }: HalalBadgeProps) {
       <img
         src="/halal-mark.png"
         alt="Halal — حلال"
-        className={`object-contain object-center ${sizeClass[size]}`}
-        width={400}
-        height={160}
+        className={`aspect-[2.4/1] w-auto object-cover object-center mix-blend-lighten ${sizeClass[size]}`}
+        width={240}
+        height={100}
       />
     </div>
   );

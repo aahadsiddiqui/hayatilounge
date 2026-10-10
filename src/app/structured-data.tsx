@@ -1,14 +1,16 @@
+import { drinksMenu, foodMenu } from "@/data/menu";
+
 export function RestaurantJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     name: "Hayati Lounge",
     description:
-      "Hayati Lounge is a halal-friendly lounge and restaurant in Ajax, Ontario serving apps, salads, handhelds, desserts, and drinks in a modern and welcoming atmosphere.",
+      "Hayati Lounge is a halal-friendly lounge in Ajax, Ontario serving shareables, handhelds, salads, desserts, mocktails, tea and coffee in a modern and welcoming atmosphere.",
     url: "https://hayatilounge.vercel.app",
     image: "https://hayatilounge.vercel.app/hero.jpg",
     logo: "https://hayatilounge.vercel.app/logo.jpg",
-    telephone: "",
+    telephone: "+1-647-835-9672",
     address: {
       "@type": "PostalAddress",
       streetAddress: "190 Station St, Unit 1",
@@ -63,64 +65,17 @@ export function RestaurantJsonLd() {
     ],
     menu: {
       "@type": "Menu",
-      hasMenuSection: [
-        {
-          "@type": "MenuSection",
-          name: "Apps",
-          hasMenuItem: [
-            { "@type": "MenuItem", name: "Fries", offers: { "@type": "Offer", price: "7.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Cajun Fries", offers: { "@type": "Offer", price: "8.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Truffle Fries", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Poutine", offers: { "@type": "Offer", price: "12.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Loaded Fries", offers: { "@type": "Offer", price: "16.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Beef Tacos", offers: { "@type": "Offer", price: "14.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Shrimp Tacos", offers: { "@type": "Offer", price: "15.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Wings w/ Fries", description: "Sauces: mild, medium, hot, honey garlic, BBQ", offers: { "@type": "Offer", price: "17.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Bruschetta", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
-          ],
-        },
-        {
-          "@type": "MenuSection",
-          name: "Salads",
-          hasMenuItem: [
-            { "@type": "MenuItem", name: "Caesar Salad", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Greek Salad", offers: { "@type": "Offer", price: "12.99", priceCurrency: "CAD" } },
-          ],
-        },
-        {
-          "@type": "MenuSection",
-          name: "Handhelds (with fries)",
-          hasMenuItem: [
-            { "@type": "MenuItem", name: "Crispy Buffalo Chicken Sandwich", offers: { "@type": "Offer", price: "16.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Grilled Chicken Deluxe", offers: { "@type": "Offer", price: "15.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Signature Beef Burger", offers: { "@type": "Offer", price: "16.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Grilled Chicken Club Wrap", offers: { "@type": "Offer", price: "14.99", priceCurrency: "CAD" } },
-          ],
-        },
-        {
-          "@type": "MenuSection",
-          name: "Desserts",
-          hasMenuItem: [
-            { "@type": "MenuItem", name: "Cheesecake", offers: { "@type": "Offer", price: "11.99", priceCurrency: "CAD" } },
-          ],
-        },
-        {
-          "@type": "MenuSection",
-          name: "Drinks",
-          hasMenuItem: [
-            { "@type": "MenuItem", name: "Soft Drinks", description: "Coke, Coke Zero, Fuze, Ginger Ale, Sprite", offers: { "@type": "Offer", price: "2.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Red Bull", offers: { "@type": "Offer", price: "5.50", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Barbican", offers: { "@type": "Offer", price: "5.50", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Green Tea", offers: { "@type": "Offer", price: "3.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Black Tea", offers: { "@type": "Offer", price: "3.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Peppermint Tea", offers: { "@type": "Offer", price: "3.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Mint Tea", offers: { "@type": "Offer", price: "3.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Karak Chai", offers: { "@type": "Offer", price: "5.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Saffron Tea", offers: { "@type": "Offer", price: "6.99", priceCurrency: "CAD" } },
-            { "@type": "MenuItem", name: "Tea Pot", offers: { "@type": "Offer", price: "12.99", priceCurrency: "CAD" } },
-          ],
-        },
-      ],
+      hasMenuSection: [...foodMenu, ...drinksMenu].map((section) => ({
+        "@type": "MenuSection",
+        name: [section.title, section.subtitle].filter(Boolean).join(" "),
+        ...(section.note && { description: section.note }),
+        hasMenuItem: section.items.map((item) => ({
+          "@type": "MenuItem",
+          name: item.name,
+          ...(item.description && { description: item.description }),
+          offers: { "@type": "Offer", price: item.price.toFixed(2), priceCurrency: "CAD" },
+        })),
+      })),
     },
   };
 

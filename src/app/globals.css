@@ -3,92 +3,133 @@
 
 /* ─── Design Tokens ─── */
 :root {
-  --bg:           #0f0d0b;
-  --bg-2:         #161210;
-  --bg-card:      #1e1915;
-  --bg-card-h:    #251f18;
+  --bg:          #0a0908;
+  --bg-2:        #12100d;
+  --panel:       #0e0c0a;
 
-  --gold:         #c9a96e;
-  --gold-light:   #dfc291;
-  --gold-dim:     rgba(201, 169, 110, 0.5);
+  --gold:        #d4a574;
+  --gold-light:  #f1d4aa;
+  --gold-deep:   #9a6a44;
+  --gold-dim:    rgba(212, 165, 116, 0.45);
 
-  --cream:        #f0e8dc;
-  --cream-muted:  #8b7b69;
-  --terracotta:   #a05a30;
+  --cream:       #f2e6d3;
+  --cream-muted: #b3a089;
 
-  --border:       rgba(201, 169, 110, 0.10);
-  --border-hover: rgba(201, 169, 110, 0.28);
-
-  --background:    #0f0d0b;
-  --foreground:    #f0e8dc;
-  --prussian-blue: #1e3a5f;
-  --lion:          #c9a96e;
-  --platinum:      #e0e7e2;
-  --kobicha:       #653c21;
-  --rust:          #a05a30;
+  --line:        rgba(212, 165, 116, 0.38);
+  --line-soft:   rgba(212, 165, 116, 0.16);
 }
 
 @theme inline {
   --color-background: var(--bg);
-  --color-foreground:  var(--cream);
-  --font-sans:         var(--font-geist-sans);
-  --font-mono:         var(--font-geist-mono);
+  --color-foreground: var(--cream);
+  --font-sans:        var(--font-cormorant);
+  --font-serif:       var(--font-cormorant);
 }
 
 /* ─── Base ─── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
 body {
   background: var(--bg);
   color: var(--cream);
-  font-family: var(--font-geist-sans), ui-sans-serif, sans-serif;
-  overflow-x: hidden;
+  font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.font-playfair {
-  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+::selection { background: rgba(212, 165, 116, 0.35); color: #fff; }
+
+/* ─── Type ─── */
+.font-script { font-family: var(--font-script), "Brush Script MT", cursive; font-weight: 400; }
+.font-caps   { font-family: var(--font-cinzel), var(--font-cormorant), serif; }
+.font-serif  { font-family: var(--font-cormorant), Georgia, serif; }
+
+.text-gold-gradient {
+  background: linear-gradient(175deg, var(--gold-light) 0%, var(--gold) 45%, var(--gold-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ─── Black marble ─── */
+.marble {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 15% 0%, rgba(120, 78, 46, 0.22), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 100%, rgba(120, 78, 46, 0.18), transparent 60%);
+}
+.marble::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='m' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0022 0.0042' numOctaves='5' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='luminanceToAlpha'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='0' intercept='0.85'/%3E%3CfeFuncG type='linear' slope='0' intercept='0.64'/%3E%3CfeFuncB type='linear' slope='0' intercept='0.44'/%3E%3CfeFuncA type='table' tableValues='0 0 0 0 0 0 0 .8 0 0 0 0 .45 0 0 0 0 0 .7 0 0 0 0 0 0'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
+  background-size: 1200px 1200px;
+}
+
+/* ─── Islamic geometric lattice ─── */
+.lattice {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23d4a574' stroke-width='0.7'%3E%3Crect x='14' y='14' width='28' height='28'/%3E%3Crect x='14' y='14' width='28' height='28' transform='rotate(45 28 28)'/%3E%3Cpath d='M0 0L10 10M56 0L46 10M0 56L10 46M56 56L46 46M28 0V8M28 56V48M0 28H8M56 28H48'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 56px;
+}
+
+/* ─── Double gold frame ─── */
+.frame {
+  position: relative;
+  border: 1px solid var(--line);
+}
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--line-soft);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Moroccan-style arch top (drinks board) */
+.arch {
+  border-top-left-radius: 50% 160px;
+  border-top-right-radius: 50% 160px;
+}
+@media (max-width: 640px) {
+  .arch {
+    border-top-left-radius: 50% 90px;
+    border-top-right-radius: 50% 90px;
+  }
 }
 
 /* ─── Scrollbar ─── */
-::-webkit-scrollbar        { width: 3px; }
-::-webkit-scrollbar-track  { background: var(--bg); }
-::-webkit-scrollbar-thumb  { background: var(--gold-dim); border-radius: 2px; }
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
 
-/* ─── Hide horizontal scrollbar ─── */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* ─── Ambient orbs ─── */
-@keyframes ambient-drift-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(35px, -28px) scale(1.06); }
-  66%       { transform: translate(-22px, 22px) scale(0.96); }
+/* ─── Motion ─── */
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(-2.5deg); }
 }
-@keyframes ambient-drift-b {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(-45px, 30px) scale(1.08); }
-  66%       { transform: translate(28px, -35px) scale(0.94); }
-}
-@keyframes ambient-drift-c {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(18px, 45px) scale(1.04); }
-  66%       { transform: translate(-32px, -15px) scale(0.98); }
-}
+.animate-sway { animation: sway 9s ease-in-out infinite; transform-origin: top right; }
 
-.orb-a { animation: ambient-drift-a 22s ease-in-out infinite; }
-.orb-b { animation: ambient-drift-b 30s ease-in-out infinite; }
-.orb-c { animation: ambient-drift-c 26s ease-in-out infinite 3s; }
-
-/* ─── Scroll indicator ─── */
 @keyframes bob {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(9px); }
+  50%      { transform: translateY(9px); }
 }
 .animate-bob { animation: bob 2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sway, .animate-bob { animation: none; }
+}

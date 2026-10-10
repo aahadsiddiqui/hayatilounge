@@ -3,17 +3,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Explore the full Hayati Lounge menu: apps, salads, handhelds with fries, drinks, and cheesecake. Serving Ajax, Ontario.",
+    "Explore the full Hayati Lounge menu: shareables, handhelds, salads, desserts, mocktails, juices, tea and coffee. Serving Ajax, Ontario.",
   keywords: [
     "Hayati Lounge menu",
     "Ajax restaurant menu",
     "Ajax lounge menu",
-    "chicken wings Ajax",
-    "cheesecake Ajax",
-    "food menu Ajax Ontario",
-    "Middle Eastern food Ajax",
-    "beef tacos Ajax",
-    "burgers Ajax",
+    "mezze board Ajax",
+    "Korean wings Ajax",
+    "birria quesadilla Ajax",
+    "shawarma wrap Ajax",
+    "Dubai pistachio brownie Ajax",
+    "mocktails Ajax",
+    "karak chai Ajax",
     "halal food Ajax",
     "Durham Region food",
   ],
@@ -23,14 +24,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Menu | Hayati Lounge Ajax",
     description:
-      "Apps, salads, handhelds, drinks, and dessert. See the full Hayati Lounge menu — Ajax, Ontario's upscale lounge & restaurant.",
+      "Shareables, handhelds, desserts, mocktails, tea and coffee. See the full Hayati Lounge menu — Ajax, Ontario.",
     url: "https://hayatilounge.vercel.app/menu",
     images: [
       {
-        url: "/loaded-fries.png",
+        url: "/hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Hayati Lounge Food Menu",
+        alt: "Hayati Lounge Menu",
       },
     ],
   },

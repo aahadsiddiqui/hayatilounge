@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Cinzel, Cormorant_Garamond, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { RestaurantJsonLd } from "./structured-data";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
+});
+
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const greatVibes = Great_Vibes({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const BASE_URL = "https://hayatilounge.vercel.app";
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Hayati Lounge Ajax",
   },
   description:
-    "Hayati Lounge is Ajax's premier upscale lounge and restaurant. Apps, salads, handhelds, drinks, and cheesecake in a modern, welcoming atmosphere. Dine in Ajax, Ontario.",
+    "Hayati Lounge is Ajax's premier upscale lounge. Mezze boards, Korean wings, birria quesadillas, shawarma wraps, mocktails, karak chai and Dubai pistachio brownies. Dine in Ajax, Ontario.",
 
   keywords: [
     "Hayati Lounge",
@@ -46,9 +48,11 @@ export const metadata: Metadata = {
     "upscale lounge Ajax",
     "Middle Eastern restaurant Ajax",
     "desserts Ajax",
-    "cheesecake Ajax",
-    "chicken wings Ajax",
-    "burgers Ajax",
+    "Dubai pistachio brownie Ajax",
+    "Korean wings Ajax",
+    "mocktails Ajax",
+    "karak chai Ajax",
+    "shawarma wrap Ajax",
     "best lounge Ajax",
     "best restaurant Ajax",
     "date night Ajax",
@@ -77,7 +81,7 @@ export const metadata: Metadata = {
     siteName: "Hayati Lounge",
     title: "Hayati Lounge | Restaurant & Lounge in Ajax, Ontario",
     description:
-      "Ajax's upscale lounge & restaurant. Apps, handhelds, drinks, and cheesecake. Experience Hayati.",
+      "Ajax's upscale lounge. Shareables, handhelds, mocktails, karak chai and desserts. Good drinks, better company.",
     images: [
       {
         url: "/hero.jpg",
@@ -92,7 +96,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hayati Lounge | Restaurant & Lounge in Ajax, Ontario",
     description:
-      "Ajax's upscale lounge & restaurant. Apps, handhelds, drinks, and cheesecake.",
+      "Ajax's upscale lounge. Shareables, handhelds, mocktails, karak chai and desserts.",
     images: ["/hero.jpg"],
   },
 
@@ -122,7 +126,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
+        className={`${cormorant.variable} ${cinzel.variable} ${greatVibes.variable} antialiased`}
       >
         <RestaurantJsonLd />
         {children}
